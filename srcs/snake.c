@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   snake.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miguel <miguel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/14 04:21:47 by miguel            #+#    #+#             */
-/*   Updated: 2020/02/16 23:10:38 by miguel           ###   ########.fr       */
+/*   Created: 2020/02/14 02:22:12 by miguel            #+#    #+#             */
+/*   Updated: 2020/03/13 20:23:41 by miguel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "snake.h"
 
-void init(char field[V][H], int *size_snake)
+int main()
 {
-    fill_structs(field, size_snake);
-    initscr();
+    //Set snake size
+    size_snake = 4;
+   
+    init_window();
+    print_field();
+    gameloop();
+    getch();
+    endwin();
+    return (0);
 }

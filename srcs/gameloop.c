@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_field.c                                      :+:      :+:    :+:   */
+/*   gameloop.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miguel <miguel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/14 02:34:35 by miguel            #+#    #+#             */
-/*   Updated: 2020/02/17 01:43:11 by miguel           ###   ########.fr       */
+/*   Created: 2020/02/16 22:26:33 by miguel            #+#    #+#             */
+/*   Updated: 2020/03/14 00:48:17 by miguel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "snake.h"
 
-void print_field(char field[V][H])
+void gameloop()
 {
-    int i;
-    int j;
-
-    i = 0;
-    while (i < V)
+    while (size_snake < N)
     {
-        j = 0;
-        while (j < H)
-        {
-            printw("%c",field[i][j]);
-            refresh();
-            j++;
-        }
-        printw("%c",'\n');
-        refresh();
-        i++;
+        input();
+        update();
+        print_game();
+        usleep(50000);
     }
-    
 }
